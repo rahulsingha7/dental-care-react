@@ -1,0 +1,36 @@
+[
+    {
+        "id":"1",
+        "name":"Teeth Whitening",
+        "description":"With professional Teeth Whitening treatment, you can enjoy the boost in confidence of a bright, white smile","img":"https://i.ibb.co/3B6g3Rv/services-1.jpg"
+    },
+  {
+      "id":"2",
+      "name":"Root Canal Treatment",
+      "description":"This procedure restores the strength of your tooth. Your pain and discomfort are gone as soon as your root canal is over, and you have full use of your tooth once again.",
+            "img":"https://i.ibb.co/zHC2g3h/services-2.jpg"
+            },
+            {
+                "id":"3",
+                "name":"Dental X-ray",
+                "description":"Our Digital Dental X-ray is utilized to detect cavities, both large and small. It is also utilized to look at the apex, or the area around the tip of the root",
+                "img":"https://i.ibb.co/vkRnLQd/services-3.jpg"
+                },
+                {
+                    "id":"4",
+                    "name":"Dentures",
+                    "description":"Dentures are removable false teeth made of acrylic (plastic) or metal.",
+                    "img":"https://i.ibb.co/Fzhqfck/services-4.jpg"
+                    },
+                    {
+                        "id":"5",
+                        "name":"Orthodontics",
+                        "description":"Orthodontics is a type of dental treatment that aims to improve the appearance, position and function of crooked or abnormally arranged teeth.",
+                        "img":"https://i.ibb.co/GnyknNB/services-5.jpg"
+                        },
+                        {
+                            "id":"6",
+                            "name":"Crowns and bridges",
+                            "description":"If you have a tooth that has been damaged by decay or an oral injury, a dental crown can restore and protect its structure. Two or more dental crowns create a dental bridge.",
+                            "img":"https://i.ibb.co/dWZqG0S/services-6.jpg"
+}]

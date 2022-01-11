@@ -6,6 +6,7 @@ import Header from './components/Shared/Header/Header';
 import AuthProvider from './contexts/AuthProvider';
 import NotFound from './components/NotFound/NotFound';
 import Home from './components/Home/Home/Home';
+import Services from './components/Home/Services/Services';
 
 function App() {
   return (
@@ -19,6 +20,9 @@ function App() {
       </Route>
       <Route path="/home">
         <Home></Home>
+      </Route>
+      <Route path="/services">
+        <Services></Services>
       </Route>
       <Route path="*">
         <NotFound></NotFound>

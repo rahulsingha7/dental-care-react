@@ -5,6 +5,7 @@ import { Carousel } from 'react-bootstrap';
 import banner1 from '../../../images/Banner/Banner1.jpg'
 import banner2 from '../../../images/Banner/Banner2.jpg'
 import { Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 const Banner = () => {
     return (
         <div>
@@ -18,7 +19,9 @@ const Banner = () => {
     <Carousel.Caption className=" d-flex flex-column align-items-start justify-content-center h-100"  >
      <h1 className='text-secondary fs-1 fw-bold'>Dental Care</h1>
      <h3 className='text-secondary fw-bold'>A Smile You <br/>Can Be Proud Of</h3>
-      <Button variant="secondary" style={{width:'150px',marginLeft:'25px'}}>Make An Appointment</Button>
+     <Link to={`/appointment`}>
+     <Button variant="secondary" style={{width:'150px',marginLeft:'25px'}}>Make An Appointment</Button>
+     </Link>
     </Carousel.Caption>
   </Carousel.Item>
   <Carousel.Item>
@@ -31,7 +34,9 @@ const Banner = () => {
     <Carousel.Caption className=" d-flex flex-column align-items-start justify-content-center h-100"  >
       <h1 className='fs-1 fw-bold' >Protect teeth and take charge of your dental health</h1>
       <h3 className='fw-bold'>We offer top quality dental service so that you can have healty and beautiful smile</h3>
-      <Button variant="dark" style={{width:'150px',marginLeft:'auto',marginRight:'auto'}}>Make An Appointment</Button>
+      <Link to={`/appointment`} style={{marginLeft:'auto',marginRight:'auto'}}>
+      <Button variant="dark" style={{width:'75%'}}>Make An Appointment</Button>
+      </Link>
     </Carousel.Caption>
   </Carousel.Item>
 </Carousel>

@@ -9,11 +9,13 @@ const ReadBlogs = () => {
         .then(res=>res.json())
         .then(data=>setFullBlogs(data));
     },[])
-    const data= fullBlogs.find((blog)=>blog?.serial===id)
+    const data= fullBlogs.find((fullBlog)=>fullBlog?.serial===id)
     console.log(data);
     return (
-        <div>
-         <img src={data?.img} />
+        <div className='my-5 pb-2'>
+         <img src={data?.img} alt=""/>
+         <h1>{data?.name}</h1>
+         <p>{data?.description}</p>
         </div>
     );
 };

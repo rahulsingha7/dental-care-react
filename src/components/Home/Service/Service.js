@@ -44,20 +44,20 @@ const Service = (props) =>  {
     responsive={responsive}
     ssr={true} // means to render carousel on server-side.
     infinite={true}
-    autoPlay={props.deviceType == "mobile" ? true : false}
+    autoPlay={props.deviceType == "mobile"? true : false}
     autoPlaySpeed={1000}
     keyBoardControl={true}
     customTransition="all .5"
     transitionDuration={500}
     containerClass="carousel-container"
-    removeArrowOnDeviceType={["tablet"]}
+    // removeArrowOnDeviceType={["tablet"]}
     deviceType={props.deviceType}
     dotListClass="custom-dot-list-style"
     itemClass="carousel-item-padding-40-px"
     renderDotsOutside={false}
   >
-    {services.map((card, serial) => (
-          <div className="ms-2 me-2" key={serial}>   
+    {services.map((card, id) => (
+          <div className="ms-2 me-2" key={id}>   
            <Card style={{height: '450px'}}>
         <Card.Img style={{height:'300px'}} variant="top" src={card.img} />
       <Card.Body>

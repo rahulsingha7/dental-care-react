@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
 const Info = () => {
     return (
@@ -7,7 +8,9 @@ const Info = () => {
             <div>
               <i className="fas fa-phone fa-2x"></i>
               <h3>24/7 Helpline</h3>
+              <Link to={`/appointment`}>
               <Button variant="secondary">Make An Appointment</Button>
+              </Link>
             </div>
             <div>
               <i className="fas fa-question fa-2x"></i>

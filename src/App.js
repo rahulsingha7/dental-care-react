@@ -14,6 +14,7 @@ import Login from './components/Login/Login';
 import PrivateRoute from './components/Login/PrivateRoute/PrivateRoute'
 import ViewDetails from './components/Login/PrivateRoute/ViewDetails/ViewDetails';
 import ReadBlogs from './components/Login/PrivateRoute/ReadBlogs/ReadBlogs';
+import Appointment from './components/Login/PrivateRoute/Appointment/Appointment';
 function App() {
   return (
     <div className="App">
@@ -44,6 +45,9 @@ function App() {
       </PrivateRoute>
       <PrivateRoute path="/readBlogs/:id">
         <ReadBlogs></ReadBlogs>
+      </PrivateRoute>
+      <PrivateRoute path="/appointment">
+        <Appointment></Appointment>
       </PrivateRoute>
       <Route path="*">
         <NotFound></NotFound>

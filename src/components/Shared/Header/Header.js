@@ -17,16 +17,19 @@ const Header = () => {
       <Nav.Link className="text-light" as={HashLink} to="/services">Services</Nav.Link>
       <Nav.Link className="text-light" as={HashLink} to="/dentists">Dentists</Nav.Link>
       <Nav.Link className="text-light" as={HashLink} to="/blogs">Blogs</Nav.Link>
-      { user?.email?
-       <Button onClick={logOut} variant="success">Log Out</Button>:
-        <Nav.Link className="text-light" as={HashLink} to="/login">Login</Nav.Link>
-        }
+
     </Nav>
     <Nav className='d-block'> 
-    <img style={{width:'20%'}} src={ user?.photoURL} />
+    <img style={{width:'20%'}}  src={ user?.photoURL} />
     <Navbar.Text className='text-light ps-2'>
        {user?.displayName}
       </Navbar.Text>
+    </Nav>
+    <Nav>
+    { user?.email?
+       <Button onClick={logOut} variant="success">Log Out</Button>:
+        <Nav.Link className="text-light" as={HashLink} to="/login">Login</Nav.Link>
+        }
     </Nav>
   </Navbar.Collapse>
           </Container>

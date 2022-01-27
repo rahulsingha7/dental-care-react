@@ -1,0 +1,37 @@
+[
+    {
+        "id":"1",
+        "name": "Damian Mcneley",
+        "description":"Orthodontist",
+        "img":"https://i.ibb.co/z71wxdk/doctor-1.jpg"
+    },
+  {
+      "id":"2",
+      "name": "Justin Tyree",
+      "description":"Orthodontist",
+      "img":"https://i.ibb.co/wz00YnQ/doctor-2.jpg"
+  },
+   {
+       "id":"3",
+       "name": "Amanda Stacey",
+        "description":"Periodontist",
+        "img":"https://i.ibb.co/xzSKnV0/doctor-3.jpg"
+  },
+   {
+       "id":"4",
+       "name":"Ciara Dempsey",
+       "description":"Endodontist",
+        "img":"https://i.ibb.co/vB553XL/doctor-4.jpg"
+    },
+   {
+       "id":"5",
+       "name": "Simonas Bankauskas",
+       "description":"Oral Pathologist",
+      "img":"https://i.ibb.co/Hp4LL0j/doctor-5.jpg"
+    },
+     {
+      "id":"6",
+      "name": "Finlay Hanning",
+      "description":"Prosthodontist",
+      "img":"https://i.ibb.co/8DH1Ny9/doctor-6.webp"
+}]

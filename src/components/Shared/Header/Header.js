@@ -1,7 +1,9 @@
 import React from 'react';
-import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { HashLink } from 'react-router-hash-link';
+import useAuth from '../../../hooks/useAuth';
 const Header = () => {
+  const{user,logOut} = useAuth();
     return (
         <>
         <Navbar bg="success" variant="dark" sticky="top" collapseOnSelect expand="lg">
@@ -13,17 +15,22 @@ const Header = () => {
     <Nav >
       <Nav.Link className="text-light" as={HashLink} to="/home">Home</Nav.Link>
       <Nav.Link className="text-light" as={HashLink} to="/services">Services</Nav.Link>
+      <Nav.Link className="text-light" as={HashLink} to="/dentists">Dentists</Nav.Link>
+      <Nav.Link className="text-light" as={HashLink} to="/blogs">Blogs</Nav.Link>
+      { user?.email?
+       <Button onClick={logOut} variant="success">Log Out</Button>:
+        <Nav.Link className="text-light" as={HashLink} to="/login">Login</Nav.Link>
+        }
     </Nav>
-    <Nav>
-    <Navbar.Text>
-        Signed in as: <a href="#login">Mark Otto</a>
+    <Nav className='d-block'> 
+    <img style={{width:'20%'}} src={ user?.photoURL} />
+    <Navbar.Text className='text-light ps-2'>
+       {user?.displayName}
       </Navbar.Text>
     </Nav>
   </Navbar.Collapse>
           </Container>
         </Navbar>
-        <br />
-       
       </>
     );
 };

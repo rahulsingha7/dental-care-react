@@ -4,7 +4,7 @@ import { Carousel } from 'react-bootstrap';
 
 import banner1 from '../../../images/Banner/Banner1.jpg'
 import banner2 from '../../../images/Banner/Banner2.jpg'
-import banner3 from '../../../images/Banner/Banner3.jpg'
+import { Button } from 'react-bootstrap';
 const Banner = () => {
     return (
         <div>
@@ -15,9 +15,10 @@ const Banner = () => {
       src={banner1}
       alt="First slide"
     />
-    <Carousel.Caption>
-      <h3>First slide label</h3>
-      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+    <Carousel.Caption className=" d-flex flex-column align-items-start justify-content-center h-100"  >
+     <h1 className='text-secondary fs-1 fw-bold'>Dental Care</h1>
+     <h3 className='text-secondary fw-bold'>A Smile You <br/>Can Be Proud Of</h3>
+      <Button variant="secondary" style={{width:'150px',marginLeft:'25px'}}>Make An Appointment</Button>
     </Carousel.Caption>
   </Carousel.Item>
   <Carousel.Item>
@@ -27,21 +28,10 @@ const Banner = () => {
       alt="Second slide"
     />
 
-    <Carousel.Caption>
-      <h3>Second slide label</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    </Carousel.Caption>
-  </Carousel.Item>
-  <Carousel.Item>
-    <img
-      className="d-block w-100"
-      src={banner3}
-      alt="Third slide"
-    />
-
-    <Carousel.Caption>
-      <h3>Third slide label</h3>
-      <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+    <Carousel.Caption className=" d-flex flex-column align-items-start justify-content-center h-100"  >
+      <h1 className='fs-1 fw-bold' >Protect teeth and take charge of your dental health</h1>
+      <h3 className='fw-bold'>We offer top quality dental service so that you can have healty and beautiful smile</h3>
+      <Button variant="dark" style={{width:'150px',marginLeft:'auto',marginRight:'auto'}}>Make An Appointment</Button>
     </Carousel.Caption>
   </Carousel.Item>
 </Carousel>

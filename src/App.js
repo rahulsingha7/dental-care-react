@@ -15,6 +15,7 @@ import PrivateRoute from './components/Login/PrivateRoute/PrivateRoute'
 import ViewDetails from './components/Login/PrivateRoute/ViewDetails/ViewDetails';
 import ReadBlogs from './components/Login/PrivateRoute/ReadBlogs/ReadBlogs';
 import Appointment from './components/Login/PrivateRoute/Appointment/Appointment';
+import Register from './components/Login/Register/Register';
 function App() {
   return (
     <div className="App">
@@ -36,6 +37,9 @@ function App() {
       </Route>
       <Route path="/blogs">
         <Blogs></Blogs>
+      </Route>
+      <Route path="/register">
+        <Register></Register>
       </Route>
       <Route path="/login">
         <Login></Login>

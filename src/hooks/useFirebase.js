@@ -1,18 +1,93 @@
-import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut } from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut,  createUserWithEmailAndPassword,signInWithEmailAndPassword,sendEmailVerification, updateProfile  } from "firebase/auth";
 import { useState, useEffect } from "react";
 import initializeAuthentication from "../components/Login/Firebase/firebase.init";
 initializeAuthentication();
+
 const useFirebase =() =>{
     const [user,setUser]= useState({});
-    const [isLoading,setIsLoading] = useState(true);
+    const [name,setName] =useState('');
+    const [error, setError] = useState('');
+    const [success, setSuccess] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [isLoading,setIsLoading] = useState(true);;
+    
     const auth= getAuth();
+    const registerNewUser = (e) =>{
+      e.preventDefault();
+      if (password.length < 6) {
+        setError('Password must be at least 6 characters long');
+        return;
+      }
+      if (!/(?=.*[0-9].*[0-9])/.test(password)) {
+        setError('Password Must Contain 2 digits');
+        return;
+      }
+      createUserWithEmailAndPassword(auth, email, password)
+      .then(result=>{
+        const user=result.user;
+        setError('');
+        setSuccess('successfully created account');
+        verifyEmail();
+        setUserName();
+      })
+      .catch(error => {
+        setError(error.message);
+      })
+     }
+    const processLogin = (e) =>{
+      e.preventDefault();
+        if (password.length < 6) {
+          setError('Password must be at least 6 characters long');
+          return;
+        }
+        if (!/(?=.*[0-9].*[0-9])/.test(password)) {
+          setError('Password Must Contain 2 digits');
+          return;
+        }
+     signInWithEmailAndPassword(auth, email, password)
+      .then(result=>{
+       
+        setUser(result.user);
+        setError('');
+        setUserName();
+        
+      })
+      .catch(error => {
+        setError(error.message);
+      })
+  
+     }
+     const handleNameChange = e =>{
+      setName(e.target.value);
+    }
+    const handleEmailChange = e => {
+      setEmail(e.target.value);
+    }
+    const handlePasswordChange = e => {
+      setPassword(e.target.value);
+    }
+
+    const verifyEmail= () =>{
+      sendEmailVerification(auth.currentUser)
+      .then(result=>{
+        
+      })
+    }
+    const setUserName = () =>{
+      updateProfile (auth?.currentUser,{displayName: name})
+      .then(result=>{
+      })
+    }
+   
+ 
+
+       //google sign in
     const signInUsingGoogle = () =>{
         setIsLoading(true);
         const googleProvider = new GoogleAuthProvider();
-        signInWithPopup(auth,googleProvider)
-        .then(result=>{
-            setUser(result.user);
-        })
+       return  signInWithPopup(auth,googleProvider)
+      
         .finally(()=>setIsLoading(false));
     }
     useEffect(()=>{
@@ -39,7 +114,14 @@ const useFirebase =() =>{
         user,
         isLoading,
         signInUsingGoogle,
-        logOut
+        logOut,
+        error,
+        handleEmailChange,
+        handlePasswordChange,
+        handleNameChange,
+        success,
+        processLogin,
+        registerNewUser,
     }
-}
+  }
 export default useFirebase;

@@ -17,13 +17,7 @@ const Header = () => {
       <Nav.Link className="text-light" as={HashLink} to="/services">Services</Nav.Link>
       <Nav.Link className="text-light" as={HashLink} to="/dentists">Dentists</Nav.Link>
       <Nav.Link className="text-light" as={HashLink} to="/blogs">Blogs</Nav.Link>
-
-    </Nav>
-    <Nav className='d-block'> 
-    <img style={{width:'20%'}}  src={ user?.photoURL} />
-    <Navbar.Text className='text-light ps-2'>
-       {user?.displayName}
-      </Navbar.Text>
+      <Nav.Link className="text-light" as={HashLink} to="/register">Register</Nav.Link>
     </Nav>
     <Nav>
     { user?.email?
@@ -31,6 +25,14 @@ const Header = () => {
         <Nav.Link className="text-light" as={HashLink} to="/login">Login</Nav.Link>
         }
     </Nav>
+    <Nav> 
+    
+     <img className='mx-auto' style={{width:'20%'}}  src={ user?.photoURL} />
+     <Navbar.Text className='text-light'>
+      {user?.displayName || user?.email}
+     </Navbar.Text> 
+    </Nav>
+   
   </Navbar.Collapse>
           </Container>
         </Navbar>

@@ -16,11 +16,11 @@ const Banner = () => {
       src={banner1}
       alt="First slide"
     />
-    <Carousel.Caption className=" d-flex flex-column align-items-start justify-content-center h-100"  >
-     <h1 className='text-secondary fs-1 fw-bold'>Dental Care</h1>
-     <h3 className='text-secondary fw-bold'>A Smile You <br/>Can Be Proud Of</h3>
+    <Carousel.Caption className=" d-flex flex-column align-items-center justify-content-center h-100 text-dark"  >
+     <h1 className=' fs-1 fw-bold'>Dental Care</h1>
+     <h3 className='fw-bold'>A Smile You <br/>Can Be Proud Of</h3>
      <Link to={`/appointment`}>
-     <Button variant="secondary" style={{width:'150px',marginLeft:'25px'}}>Make An Appointment</Button>
+     <Button variant="dark" style={{width:'150px',marginLeft:'auto',marginRight:'auto'}}>Make An Appointment</Button>
      </Link>
     </Carousel.Caption>
   </Carousel.Item>
@@ -31,9 +31,9 @@ const Banner = () => {
       alt="Second slide"
     />
 
-    <Carousel.Caption className=" d-flex flex-column align-items-start justify-content-center h-100"  >
-      <h1 className='fs-1 fw-bold' >Protect teeth and take charge of your dental health</h1>
-      <h3 className='fw-bold'>We offer top quality dental service so that you can have healty and beautiful smile</h3>
+    <Carousel.Caption className=" d-flex flex-column align-items-center justify-content-center h-100 text-dark"  >
+      <h4 className='mt-1'>Protect teeth and take charge of your dental health</h4>
+      <p >We offer top quality dental service <br/> so that you can have healty and beautiful smile</p>
       <Link to={`/appointment`} style={{marginLeft:'auto',marginRight:'auto'}}>
       <Button variant="dark" style={{width:'75%'}}>Make An Appointment</Button>
       </Link>
